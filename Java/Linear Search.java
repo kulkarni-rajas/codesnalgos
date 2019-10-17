@@ -4,23 +4,24 @@
 
 class GFG 
 { 
-public static int search(int arr[], int x) 
+	int n = 0;
+	int i = 0;
+int search(int arr[], int x, int i) 
 { 
-	int n = arr.length; 
-	for(int i = 0; i < n; i++) 
-	{ 
-		if(arr[i] == x) 
-			return i; 
-	} 
-	return -1; 
+	if(arr[i] != x && i!=n-1) 
+		search(arr,x,i+1); 
+	if(arr[i] != x && i==n-1)
+		return -1;		
+	else 
+		return i;
 } 
 
 public static void main(String args[]) 
 { 
 	int arr[] = { 2, 3, 4, 10, 40 }; 
 	int x = 10; 
-	
-	int result = search(arr, x); 
+	int n=arr.length;
+	int result = search(arr, x, i); 
 	if(result == -1) 
 		System.out.print("Element is not present in array"); 
 	else
