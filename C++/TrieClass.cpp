@@ -28,7 +28,7 @@ class Trie {
         Trie* curr = this;
         for(char c:word)
         {
-            if(curr->children[c-'a'])
+            if(curr->children[c-'a'] == nullptr)
                 curr->children[c-'a'] = new Trie();
             curr = curr->children[c-'a'];
         }
